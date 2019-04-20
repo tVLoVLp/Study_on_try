@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="310dp"
+    android:layout_height="230dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_formula"
+        android:textSize="26dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text_eng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="16dp"
+            android:text="Formula:"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/formulaEditText"
+            android:layout_width="309dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="16dp"
+            android:hint="@string/Mform"
+            android:singleLine="true" />
+        <TextView
+            android:id="@+id/text_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/formulaEditText"
+            android:text="Meaning:"
+            android:textSize="18dp"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/meaningEditText"
+            android:layout_width="309dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="16dp"
+            android:layout_below="@+id/formulaEditText"
+            android:hint="@string/Mmeaning"
+            android:singleLine="true" />
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/create_formula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:background="@color/gold"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+</LinearLayout>
+
