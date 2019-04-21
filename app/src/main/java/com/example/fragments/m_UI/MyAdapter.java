@@ -5,9 +5,13 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.fragments.R;
@@ -18,6 +22,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
+    private MyViewHolder.OnItemClickListener mListener;
     public Context context;
     public ArrayList<String> spacecrafts;
 
@@ -58,6 +63,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public int getItemCount() {
         return spacecrafts.size();
+    }
+
+    public void setOnItemClickListener(MyViewHolder.OnItemClickListener listener) {
+        mListener = listener;
     }
 }
 

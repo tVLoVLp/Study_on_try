@@ -14,4 +14,6 @@
     <string name="enter_formula">Enter your formulas</string>
     <string name="Mform">Formula</string>
     <string name="Mmeaning">Meaning</string>
+    <string name="Change">Change</string>
+    <string name="Delete">Delete</string>
 </resources>

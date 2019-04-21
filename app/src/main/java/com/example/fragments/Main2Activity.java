@@ -15,13 +15,17 @@ import android.widget.Toast;
 import com.example.fragments.m_Realm.RealmHelper;
 import com.example.fragments.m_Realm.Spacecraft;
 import com.example.fragments.m_UI.MyAdapter;
+import com.example.fragments.m_UI.MyViewHolder;
+
 
 import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class Main2Activity extends AppCompatActivity {
+import static com.example.fragments.m_UI.MyViewHolder.*;
+
+public class Main2Activity extends AppCompatActivity implements MyViewHolder.OnItemClickListener {
     Realm realm;
     ArrayList<String> spacecrafts;
     MyAdapter adapter;
@@ -51,6 +55,7 @@ public class Main2Activity extends AppCompatActivity {
 
         adapter=new MyAdapter(this,spacecrafts);
         rv.setAdapter(adapter);
+        adapter.setOnItemClickListener(Main2Activity.this);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,5 +96,16 @@ displayInputDialog();
              }
          });
          d.show();
+    }
+
+
+    @Override
+    public void onChangeClick(int position) {
+        Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
+        Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
     }
 }
