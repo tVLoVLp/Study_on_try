@@ -1,6 +1,7 @@
 package com.example.fragments;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class MthFormyluActivity extends AppCompatActivity {
     RealmChangeListener realmChangeListener;
     ArrayList<String> spacecrafts;
     WordsAdapter adapter;
+    Button back,start;
     RecyclerView rv;
     EditText wordEditTxt,trsEdit,translateEdit;
     private static final String TAG="WordsActivity";
@@ -43,6 +45,16 @@ public class MthFormyluActivity extends AppCompatActivity {
         FloatingActionButton fab=findViewById(R.id.button_add_mthform);
         getIncomingIntent();
         rv=findViewById(R.id.recycler_view_mthform);
+        back=findViewById(R.id.btn_back_mth);
+        start=findViewById(R.id.start_words_mth);
+        //Button Back
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MthFormyluActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         rv.setLayoutManager(new LinearLayoutManager(this));
         String position=getIntent().getStringExtra("id");
         Realm.init(getApplicationContext());
@@ -73,6 +85,13 @@ public class MthFormyluActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayInputDialog();
+            }
+        });
+        //Button Start
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

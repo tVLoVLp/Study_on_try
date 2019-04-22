@@ -11,12 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:hint="Title"/>
     <Button
         android:id="@+id/button_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/update"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/colorWhite"
         android:layout_below="@+id/edit_title"
         android:layout_centerInParent="true"/>
 

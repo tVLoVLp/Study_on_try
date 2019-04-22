@@ -1,6 +1,7 @@
 package com.example.fragments;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class PhFormulasActivity extends AppCompatActivity {
     Realm realm;
     RealmChangeListener realmChangeListener;
     ArrayList<String> spacecrafts;
+    Button back,start;
     WordsAdapter adapter;
     RecyclerView rv;
     EditText wordEditTxt,trsEdit,translateEdit;
@@ -41,6 +43,16 @@ public class PhFormulasActivity extends AppCompatActivity {
         FloatingActionButton fab=findViewById(R.id.button_add_mthform);
         getIncomingIntent();
         rv=findViewById(R.id.recycler_view_mthform);
+        back=findViewById(R.id.btn_back_mth);
+        start=findViewById(R.id.start_words_mth);
+        //Button Back
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PhFormulasActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
         rv.setLayoutManager(new LinearLayoutManager(this));
         String position=getIntent().getStringExtra("id");
         Realm.init(getApplicationContext());
@@ -71,6 +83,13 @@ public class PhFormulasActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayInputDialog();
+            }
+        });
+        //Button Start
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

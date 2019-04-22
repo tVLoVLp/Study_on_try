@@ -1,6 +1,7 @@
 package com.example.fragments;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import io.realm.RealmConfiguration;
 public class WordsActivity extends AppCompatActivity {
     TextView textView;
     Realm realm;
+    Button back,start;
     RealmChangeListener realmChangeListener;
     ArrayList<String> spacecrafts;
     WordsAdapter adapter;
@@ -42,7 +44,19 @@ public class WordsActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: started.");
         FloatingActionButton fab=findViewById(R.id.button_add_words);
         getIncomingIntent();
+
         rv=findViewById(R.id.recycler_view_words);
+        back=findViewById(R.id.btn_back);
+        start=findViewById(R.id.start_words);
+        //Button Back
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WordsActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        //Buu
         rv.setLayoutManager(new LinearLayoutManager(this));
         String position=getIntent().getStringExtra("id");
         Realm.init(getApplicationContext());
@@ -73,6 +87,13 @@ public class WordsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 displayInputDialog();
+            }
+        });
+        //Button Start
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

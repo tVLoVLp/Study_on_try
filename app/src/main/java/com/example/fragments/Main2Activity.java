@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 
 import static com.example.fragments.m_UI.MyViewHolder.*;
 
@@ -84,6 +85,7 @@ displayInputDialog();
                          spacecrafts=helper.retrieve();
                          adapter=new MyAdapter(Main2Activity.this,spacecrafts);
                          rv.setAdapter(adapter);
+
                      }else{
                          Toast.makeText(Main2Activity.this,"Name must be unique",Toast.LENGTH_SHORT).show();
                      }
@@ -101,11 +103,17 @@ displayInputDialog();
 
     @Override
     public void onChangeClick(int position) {
-        Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onDeleteClick(int position) {
-        Toast.makeText(this, "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
+    public void onDeleteClick(final int position) {
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                RealmResults<Spacecraft>spacecrafts=realm.where(Spacecraft.class).equalTo("id",position).findAll();
+                spacecrafts.deleteFirstFromRealm();
+            }
+        });
     }
 }

@@ -31,6 +31,7 @@
     android:layout_alignParentTop="true"
     android:paddingLeft="16dp"
     android:text="&#8942;"
+    android:textSize="36dp"
     android:textAppearance="?android:textAppearanceLarge"
     />
     </RelativeLayout>

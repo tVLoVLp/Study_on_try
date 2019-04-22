@@ -16,13 +16,14 @@ import com.example.fragments.R;
 import com.example.fragments.UpdateActivity;
 
 public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-    TextView nameTxt;
+    TextView nameTxt,optionDigit;
     RelativeLayout parentLayout;
     private OnItemClickListener mListener;
 
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
         nameTxt=itemView.findViewById(R.id.text_view_title);
+        optionDigit=itemView.findViewById(R.id.textViewOptions);
         parentLayout = itemView.findViewById(R.id.parent_layout);
 
         itemView.setOnCreateContextMenuListener(this);
