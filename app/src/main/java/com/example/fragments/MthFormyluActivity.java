@@ -57,9 +57,10 @@ public class MthFormyluActivity extends AppCompatActivity {
         });
         rv.setLayoutManager(new LinearLayoutManager(this));
         String position=getIntent().getStringExtra("id");
+         final String test=position+"Math";
         Realm.init(getApplicationContext());
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
-                .name(position+"Math")
+                .name(test)
                 .schemaVersion(0)
                 .deleteRealmIfMigrationNeeded()
                 .build();
@@ -91,7 +92,9 @@ public class MthFormyluActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MthFormyluActivity.this,TestActivity.class);
+                intent.putExtra("subject_id",test);
+                startActivity(intent);
             }
         });
     }

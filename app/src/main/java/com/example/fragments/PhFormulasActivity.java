@@ -54,10 +54,11 @@ public class PhFormulasActivity extends AppCompatActivity {
             }
         });
         rv.setLayoutManager(new LinearLayoutManager(this));
-        String position=getIntent().getStringExtra("id");
+        final String position=getIntent().getStringExtra("id");
+        final String test =position+"Physic";
         Realm.init(getApplicationContext());
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
-                .name(position+"Physic")
+                .name(test)
                 .schemaVersion(0)
                 .deleteRealmIfMigrationNeeded()
                 .build();
@@ -89,7 +90,9 @@ public class PhFormulasActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(PhFormulasActivity.this,TestActivity.class);
+                intent.putExtra("subject_id",test);
+                startActivity(intent);
             }
         });
     }

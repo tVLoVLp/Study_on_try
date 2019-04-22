@@ -16,4 +16,83 @@
     <string name="Mmeaning">Meaning</string>
     <string name="Change">Change</string>
     <string name="Delete">Delete</string>
+    <string name="answer_1">Answer_1</string>
+    <string name="answer_2">Answer_2</string>
+    <string name="answer_3">Answer_3</string>
+    <string name="next">Наступний</string>
+
+    <string-array name="word_value">
+        <item>activity </item>
+        <item>already</item>
+        <item>amount</item>
+        <item>annoy</item>
+        <item>appear</item>
+        <item>atom</item>
+        <item>author</item>
+        <item>biography</item>
+        <item>blind</item>
+        <item>brain</item>
+        <item>cancel</item>
+        <item>cartoon</item>
+        <item>catchy</item>
+        <item>character</item>
+        <item>cinema</item>
+        <item>circle</item>
+        <item>circus</item>
+        <item>common</item>
+        <item>complain</item>
+        <item>composer</item>
+        <item>concert</item>
+        <item>congratulate</item>
+        <item>correct</item>
+        <item>dictionary</item>
+        <item>dramatic</item>
+        <item>dream</item>
+        <item>drummer</item>
+        <item>enormous</item>
+        <item>environment</item>
+        <item>event</item>
+        <item>excited</item>
+        <item>exotic</item>
+        <item>expencive</item>
+        <item>famous</item>
+    </string-array>
+
+
+    <string-array name="word_translete">
+        <item>діяльність </item>
+        <item>уже</item>
+        <item>кількість</item>
+        <item>дратувати</item>
+        <item>з\'являтись</item>
+        <item>атом</item>
+        <item>автор</item>
+        <item>біографія</item>
+        <item>сліпий</item>
+        <item>мозок</item>
+        <item>відмінити</item>
+        <item>мультик</item>
+        <item>помітний</item>
+        <item>характер</item>
+        <item>кіно</item>
+        <item>круг</item>
+        <item>цирк</item>
+        <item>звичайний</item>
+        <item>скаржитись</item>
+        <item>композитор</item>
+        <item>концер</item>
+        <item>поздравляти</item>
+        <item>виправляти</item>
+        <item>словник</item>
+        <item>драматичний</item>
+        <item>мрія</item>
+        <item>барабанщик</item>
+        <item>величезний</item>
+        <item>навколишнє средовище</item>
+        <item>подія</item>
+        <item>схвильований</item>
+        <item>екзотичний</item>
+        <item>дорогий</item>
+        <item>відомий</item>
+    </string-array>
 </resources>

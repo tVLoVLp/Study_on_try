@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <string name="activity">діяльність </string>
+    <string name="already">уже</string>
+    <string name="amount">кількість</string>
+    <string name="annoy">дратувати</string>
+    <string name="appear">з\'являтись</string>
+    <string name="atom">атом</string>
+    <string name="author">автор</string>
+    <string name="biography">біографія</string>
+    <string name="blind">сліпий</string>
+    <string name="brain">мозок</string>
+    <string name="cancel">відмінити</string>
+    <string name="cartoon">мультик</string>
+    <string name="catchy">помітний</string>
+    <string name="character">характер</string>
+    <string name="cinema">кіно</string>
+    <string name="circle">круг</string>
+    <string name="circus">цирк</string>
+    <string name="common">звичайний</string>
+    <string name="complain">скаржитись</string>
+    <string name="composer">композитор</string>
+    <string name="concert">концер</string>
+    <string name="congratulate">поздравляти</string>
+    <string name="correct">виправляти</string>
+    <string name="dictionary">словник</string>
+    <string name="dramatic">драматичний</string>
+    <string name="dream">мрія</string>
+    <string name="drummer">барабанщик</string>
+    <string name="enormous">величезний</string>
+    <string name="environment">навколишнє средовище</string>
+    <string name="event">подія</string>
+    <string name="excited">схвильований</string>
+    <string name="exotic">екзотичний</string>
+    <string name="expencive">дорогий</string>
+    <string name="famous">відомий</string>
+
+</resources>
