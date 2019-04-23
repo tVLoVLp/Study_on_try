@@ -3,7 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_2"
+        app:title=" "
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/test_result"
         android:layout_width="wrap_content"
@@ -16,9 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/word"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="38sp"
+        android:layout_centerInParent="true"
         android:textColor="@android:color/black" />
     <TextView
         android:id="@+id/count"
@@ -82,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="22dp"
-        android:layout_marginBottom="146dp"
+        android:layout_marginBottom="170dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/rounded_button"
         android:text="@string/answer_3"

@@ -7,7 +7,9 @@
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
     android:layout_margin="4dp"
-    android:elevation="4dp">>
+    android:elevation="4dp"
+    android:background="@drawable/rounded_button"
+    android:backgroundTint="@color/color_3">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,6 +24,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Title"
+            android:textColor="@color/colorWhite"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 <TextView
     android:id="@+id/textViewOptions"
@@ -31,7 +34,7 @@
     android:layout_alignParentTop="true"
     android:paddingLeft="16dp"
     android:text="&#8942;"
-    android:textSize="36dp"
+    android:textSize="16dp"
     android:textAppearance="?android:textAppearanceLarge"
     />
     </RelativeLayout>

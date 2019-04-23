@@ -8,4 +8,9 @@
     <color name="navigation">#661FFF</color>
     <color name="black">#000000</color>
     <color name="gold">#FFFFBB33</color>
+
+    <color name="color_1">#a7f2db</color>
+    <color name="color_2">#7bcace</color>
+    <color name="color_3">#678eb5</color>
+    <color name="color_4">#4f4e78</color>
 </resources>

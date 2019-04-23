@@ -5,16 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="50dp">
+    >
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_2"
+        app:title=" "
+        tools:ignore="MissingConstraints" >
+    </android.support.v7.widget.Toolbar>
     <TextView
+        android:id="@+id/textice"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="English groups"
     android:textSize="40dp"
-    android:textColor="@color/black"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="40dp"
+    android:textColor="@color/color_4"
     android:layout_centerInParent="true"/></RelativeLayout>
 
 <RelativeLayout
@@ -23,8 +35,9 @@
     <android.support.v7.widget.RecyclerView
     android:id="@+id/recycler_view"
     android:layout_width="300dp"
-    android:layout_height="300dp"
-    android:layout_centerInParent="true" />
+    android:layout_height="320dp"
+        android:layout_marginTop="200dp"
+    android:layout_centerHorizontal="true" />
 </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
@@ -33,5 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_add_black_24dp" />
+        android:src="@drawable/ic_add_black_24dp"
+        android:background="@color/color_4"
+        android:backgroundTint="@color/color_4"/>
 </android.support.design.widget.CoordinatorLayout>

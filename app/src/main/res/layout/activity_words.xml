@@ -5,7 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WordsActivity">
-
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color_2"
+        app:title=" "
+        tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -14,7 +20,8 @@
         android:textSize="40dp"
         android:textStyle="normal"
         android:layout_gravity="top|center"
-        android:textColor="@color/black"
+        android:textColor="@color/color_4"
+        android:layout_marginTop="60dp"
         tools:layout_editor_absoluteX="176dp"
         tools:layout_editor_absoluteY="356dp" />
 
@@ -22,7 +29,7 @@
         android:id="@+id/recycler_view_words"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="140dp" />
 <Button
     android:id="@+id/btn_back"
     android:layout_width="130dp"
