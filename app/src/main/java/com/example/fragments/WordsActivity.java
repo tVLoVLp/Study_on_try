@@ -31,6 +31,9 @@ public class WordsActivity extends AppCompatActivity {
     TextView textView;
     Realm realm;
     Button back,start;
+    public ArrayList<SpacecraftWords> spacecraftWords;//empty
+    public ArrayList<String> value;
+    private ArrayList<String> transete;
     RealmChangeListener realmChangeListener;
     ArrayList<SpacecraftWords> values;
     ArrayList<String> spacecrafts;
@@ -74,6 +77,7 @@ public class WordsActivity extends AppCompatActivity {
 
         adapter=new WordsAdapter(this,helper.refresh());
         rv.setAdapter(adapter);
+        spacecraftWords=helper.refresh();
 
         realmChangeListener=new RealmChangeListener() {
             @Override
@@ -90,15 +94,36 @@ public class WordsActivity extends AppCompatActivity {
                 displayInputDialog();
             }
         });
+        value=new ArrayList<>();
+        transete=new ArrayList<>();
+        for(int i=0;i<spacecraftWords.size();i++) {
+            SpacecraftWords sw = spacecraftWords.get(i);
+            String word =sw.getWord();
+            Log.d("Word",word);
+            value.add(i,word);
+            String translate=sw.getTranslate();
+            Log.d("Translate",translate);
+            transete.add(translate);
+        }
+
+
+
         //Button Start
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(WordsActivity.this,TestActivity.class);
-                intent.putExtra("subject_id",position);
-                startActivity(intent);
+                if(value.size()<=6) {
+                    Toast.makeText(WordsActivity.this, "You should enter more then 6 items", Toast.LENGTH_SHORT).show();
+                    helper.retrieveDB();
+                }
+                else {
+                    Intent intent = new Intent(WordsActivity.this, TestActivity.class);
+                    intent.putExtra("subject_id", position);
+                    startActivity(intent);
+                }
             }
         });
+
     }
     private void displayInputDialog(){
         Dialog d=new Dialog(this);

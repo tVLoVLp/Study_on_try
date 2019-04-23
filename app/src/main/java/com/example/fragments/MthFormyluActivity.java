@@ -31,6 +31,9 @@ public class MthFormyluActivity extends AppCompatActivity {
     TextView textView;
     Realm realm;
     RealmChangeListener realmChangeListener;
+    public ArrayList<SpacecraftWords> spacecraftWords;//empty
+    public ArrayList<String> value;
+    private ArrayList<String> transete;
     ArrayList<String> spacecrafts;
     WordsAdapter adapter;
     Button back,start;
@@ -72,6 +75,7 @@ public class MthFormyluActivity extends AppCompatActivity {
 
         adapter=new WordsAdapter(this,helper.refresh());
         rv.setAdapter(adapter);
+        spacecraftWords=helper.refresh();
 
         realmChangeListener=new RealmChangeListener() {
             @Override
@@ -88,13 +92,30 @@ public class MthFormyluActivity extends AppCompatActivity {
                 displayInputDialog();
             }
         });
+        value=new ArrayList<>();
+        transete=new ArrayList<>();
+        for(int i=0;i<spacecraftWords.size();i++) {
+            SpacecraftWords sw = spacecraftWords.get(i);
+            String word =sw.getWord();
+            Log.d("Word",word);
+            value.add(i,word);
+            String translate=sw.getTranslate();
+            Log.d("Translate",translate);
+            transete.add(translate);
+        }
         //Button Start
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MthFormyluActivity.this,TestActivity.class);
-                intent.putExtra("subject_id",test);
-                startActivity(intent);
+                if(value.size()<=4) {
+                    Toast.makeText(MthFormyluActivity.this, "You should enter more then 4 items", Toast.LENGTH_SHORT).show();
+                    helper.retrieveDB();
+                }
+                else {
+                    Intent intent = new Intent(MthFormyluActivity.this, TestActivity.class);
+                    intent.putExtra("subject_id", test);
+                    startActivity(intent);
+                }
             }
         });
     }

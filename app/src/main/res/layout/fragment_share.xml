@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Share Fragment"
-    android:layout_centerInParent="true"
-    android:textSize="30sp"/>
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view_history"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/myFAB"
         android:layout_width="76dp"

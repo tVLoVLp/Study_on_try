@@ -19,8 +19,10 @@
     <string name="answer_1">Answer_1</string>
     <string name="answer_2">Answer_2</string>
     <string name="answer_3">Answer_3</string>
-    <string name="next">Наступний</string>
-
+    <string name="result">Your result:</string>
+    <string name="next">Next</string>
+    <string name="word_tr">Word-Translate</string>
+    <string name="tr_word">Translate-Word</string>
     <string-array name="word_value">
         <item>activity </item>
         <item>already</item>

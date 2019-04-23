@@ -10,7 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".HistoryAct"></activity>
+        <activity android:name=".TranslateTestActivity" />
+        <activity android:name=".ChooseTest" />
+        <activity android:name=".TestActivity" />
         <activity android:name=".PhFormulasActivity" />
         <activity android:name=".MthFormyluActivity" />
         <activity android:name=".WordsActivity" />
