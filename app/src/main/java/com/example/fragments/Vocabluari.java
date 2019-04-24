@@ -100,7 +100,12 @@ public class Vocabluari {
                     // String r = Integer.toString(RESULT);
                      //result.setText(r);
 
-                 }else FalseWordOne.setBackgroundColor(Color.RED);
+                 }else {FalseWordOne.setBackgroundColor(Color.RED);
+                     FalseWordOne.setClickable(false);
+                     FalseWordTwo.setClickable(false);
+                     FalseWordThree.setClickable(false);
+                     FalseWordFour.setClickable(false);
+                 }
              }
          });
 
@@ -120,7 +125,12 @@ public class Vocabluari {
                     // String r = Integer.toString(RESULT);
                     //result.setText(r);
 
-                }else FalseWordTwo.setBackgroundColor(Color.RED);
+                }else {FalseWordTwo.setBackgroundColor(Color.RED);
+                    FalseWordOne.setClickable(false);
+                    FalseWordTwo.setClickable(false);
+                    FalseWordThree.setClickable(false);
+                    FalseWordFour.setClickable(false);
+                }
             }
         });
 
@@ -139,7 +149,12 @@ public class Vocabluari {
                     // String r = Integer.toString(RESULT);
                     //result.setText(r);
 
-                }else FalseWordThree.setBackgroundColor(Color.RED);
+                }else {FalseWordThree.setBackgroundColor(Color.RED);
+                    FalseWordOne.setClickable(false);
+                    FalseWordTwo.setClickable(false);
+                    FalseWordThree.setClickable(false);
+                    FalseWordFour.setClickable(false);
+                }
             }
         });
         FalseWordFour.setOnClickListener(new View.OnClickListener() {
@@ -153,13 +168,19 @@ public class Vocabluari {
                     FalseWordTwo.setClickable(false);
                     FalseWordThree.setClickable(false);
                     FalseWordFour.setClickable(false);
-                }else FalseWordFour.setBackgroundColor(Color.RED);
+                }else {
+                    FalseWordFour.setBackgroundColor(Color.RED);
+                    FalseWordOne.setClickable(false);
+                    FalseWordTwo.setClickable(false);
+                    FalseWordThree.setClickable(false);
+                    FalseWordFour.setClickable(false);
+                }
             }
         });
         Next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            FalseWordOne.setClickable(true);
+           FalseWordOne.setClickable(true);
             FalseWordTwo.setClickable(true);
             FalseWordThree.setClickable(true);
             FalseWordFour.setClickable(true);
