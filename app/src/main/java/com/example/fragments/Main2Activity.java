@@ -39,6 +39,7 @@ public class Main2Activity extends AppCompatActivity implements MyViewHolder.OnI
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setTitle("Groups");
@@ -67,6 +68,9 @@ public class Main2Activity extends AppCompatActivity implements MyViewHolder.OnI
 
         RealmHelper helper=new RealmHelper(realm);
         spacecrafts=helper.retrieve();
+        spacecrafts.add(0,"Essential words");
+        spacecrafts.add(1,"Elementary words");
+        spacecrafts.add(2,"intermediate words");
 
         adapter=new MyAdapter(this,spacecrafts);
         rv.setAdapter(adapter);

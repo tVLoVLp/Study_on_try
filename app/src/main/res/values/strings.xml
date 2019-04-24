@@ -5,6 +5,8 @@
     <string name="Ph">Physic</string>
     <string name="create">Create</string>
     <string name="group">Group</string>
+    <string name="finish">Finish Test</string>
+    <string name="retry">Retry</string>
     <string name="update">Update</string>
     <string name="group_dialog">Group name</string>
     <string name="enter_words">Enter your words</string>
@@ -19,10 +21,23 @@
     <string name="answer_1">Answer_1</string>
     <string name="answer_2">Answer_2</string>
     <string name="answer_3">Answer_3</string>
+    <string name="answer_4">Answer_4</string>
     <string name="result">Your result:</string>
     <string name="next">Next</string>
     <string name="word_tr">Word-Translate</string>
     <string name="tr_word">Translate-Word</string>
+    <string name="title_program">Study on</string>
+    <string name="notification_text">Ви давно не тренувалися!</string>
+    <string name="advise_1">Вивчіть краще матеріал</string>
+    <string name="advise_1_1">Great result!Congratulations</string>
+    <string name="average">Not bad!But you should spend more time in training</string>
+    <string name="bad">So sad( You should work harder!</string>
+    <string name="topic_statistic">Статистика</string>
+    <string name="best_record">Your best record:</string>
+    <string name="advise">Поради</string>
+    <string name="TODO">TODO</string>
+    <string name="data">Дата</string>
+    <string name="subjects">Предмети</string>
     <string-array name="word_value">
         <item>activity </item>
         <item>already</item>
@@ -97,4 +112,46 @@
         <item>дорогий</item>
         <item>відомий</item>
     </string-array>
+
+    <string-array name ="word_elementary_value">
+        <item>can</item>
+        <item>catch</item>
+        <item>children</item>
+        <item>choose</item>
+        <item>climb</item>
+        <item>close</item>
+        <item>clothes</item>
+        <item>color</item>
+        <item>come</item>
+        <item>country</item>
+        <item>day</item>
+        <item>death</item>
+        <item>disease</item>
+        <item>do</item>
+        <item>door</item>
+    </string-array>
+
+
+    <string-array name ="word_elementary_traslete">
+        <item>могти</item>
+        <item>ловити</item>
+        <item>діти</item>
+        <item>обирати</item>
+        <item>взбиратись</item>
+        <item>закривати</item>
+        <item>одяг</item>
+        <item>колір</item>
+        <item>приходити</item>
+        <item>країна</item>
+        <item>день</item>
+        <item>смерть</item>
+        <item>хвороба</item>
+        <item>робити</item>
+        <item>двері</item>
+    </string-array>
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

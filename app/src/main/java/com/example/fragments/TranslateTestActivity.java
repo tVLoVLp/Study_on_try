@@ -82,7 +82,7 @@ public class TranslateTestActivity extends AppCompatActivity /*implements View.O
         realm=Realm.getInstance(realmConfiguration);*/
 
 
-        final Vocabluari group_one = new Vocabluari();
+       /* final Vocabluari group_one = new Vocabluari();
 
 
         //value = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_value)));
@@ -111,7 +111,7 @@ public class TranslateTestActivity extends AppCompatActivity /*implements View.O
 
 
             }
-        });
+        });*/
     }
 
 

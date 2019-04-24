@@ -23,6 +23,7 @@ import com.example.fragments.m_UI.MyAdapter;
 import com.example.fragments.m_UI.WordsAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import io.realm.Realm;
 import io.realm.RealmChangeListener;
@@ -31,7 +32,7 @@ import io.realm.RealmConfiguration;
 public class WordsActivity extends AppCompatActivity {
     TextView textView;
     Realm realm;
-    Button back,start;
+    Button back, start;
     public ArrayList<SpacecraftWords> spacecraftWords;//empty
     public ArrayList<String> value;
     private ArrayList<String> transete;
@@ -40,8 +41,9 @@ public class WordsActivity extends AppCompatActivity {
     ArrayList<String> spacecrafts;
     WordsAdapter adapter;
     RecyclerView rv;
-    EditText wordEditTxt,trsEdit,translateEdit;
-    private static final String TAG="WordsActivity";
+    EditText wordEditTxt, trsEdit, translateEdit;
+    private static final String TAG = "WordsActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,27 +58,51 @@ public class WordsActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Main2Activity.class));
+                startActivity(new Intent(getApplicationContext(), Main2Activity.class));
                 finish();
             }
         });
-        FloatingActionButton fab=findViewById(R.id.button_add_words);
+        FloatingActionButton fab = findViewById(R.id.button_add_words);
         getIncomingIntent();
 
-        rv=findViewById(R.id.recycler_view_words);
-        back=findViewById(R.id.btn_back);
-        start=findViewById(R.id.start_words);
+        rv = findViewById(R.id.recycler_view_words);
+        back = findViewById(R.id.btn_back);
+        start = findViewById(R.id.start_words);
         //Button Back
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(WordsActivity.this,MainActivity.class);
+                Intent intent = new Intent(WordsActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
         //Buu
         rv.setLayoutManager(new LinearLayoutManager(this));
-        final String position=getIntent().getStringExtra("id");
+        final String position = getIntent().getStringExtra("id") + "Rar";
+        String elementary = "Elementary words"+ "Rar";
+        String eq = "Essential words" + "Rar";
+        String interm="intermediate words"+"Rar";
+       /* if(position==eq){
+            textView.setText(position+"R");
+            Log.d("Messege:","good job");
+            value=new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_value)));
+            transete=new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_translete)));
+
+          /* for(int i=0;i<value.size();i++) {
+                String word_val =value.get(i);
+                String transl=transete.get(i);
+                SpacecraftWords sw = spacecraftWords.get(i);
+                sw.setWord(word_val);
+                sw.setTranslate(transl);
+                Log.d("Word","sdfds");
+                //value.add(i,word);
+               // String translate=sw.getTranslate();
+                //Log.d("Translate",translate);
+                //transete.add(translate);
+            }
+           // adapter=new WordsAdapter(this,words[2]);
+            //value = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_value)));
+        }*/
         Realm.init(getApplicationContext());
         RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
                 .name(position)
@@ -84,14 +110,103 @@ public class WordsActivity extends AppCompatActivity {
                 .deleteRealmIfMigrationNeeded()
                 .build();
         Realm.setDefaultConfiguration(realmConfiguration);
-        realm=Realm.getInstance(realmConfiguration);
+        realm = Realm.getInstance(realmConfiguration);
 
-        final WordsRealmHelper helper=new WordsRealmHelper(realm);
+        final WordsRealmHelper helper = new WordsRealmHelper(realm);
         helper.retrieveDB();
 
-        adapter=new WordsAdapter(this,helper.refresh());
+        adapter = new WordsAdapter(this, helper.refresh());
         rv.setAdapter(adapter);
-        spacecraftWords=helper.refresh();
+        spacecraftWords = helper.refresh();
+        if (position == eq) {
+            // textView.setText(position + "R");
+            Log.d("Messege:", "good job");
+            value = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_value)));
+            transete = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_translete)));
+            SpacecraftWords sw = new SpacecraftWords();
+            if (spacecraftWords.size() == 0) {
+                for (int i = 0; i < value.size(); i++) {
+                    String word_val = value.get(i);
+                    // textView.setText(word_val);
+                    String transl = transete.get(i);
+                    sw.setWord(word_val);
+                    // sw.setTranscription("3");
+                    sw.setTranslate(transl);
+                    WordsRealmHelper helper1 = new WordsRealmHelper(realm);
+                    Log.d("Word", "sdfds");
+                    if (helper1.save(sw)) {
+//                    wordEditTxt.setText("");
+                        //                  trsEdit.setText("");
+                        //                translateEdit.setText("");
+                    } else {
+                        Toast.makeText(WordsActivity.this, "Invalid Data", Toast.LENGTH_SHORT).show();
+                    }
+                    //value.add(i,word);
+                    // String translate=sw.getTranslate();
+                    //Log.d("Translate",translate);
+                    //transete.add(translate);
+                }
+            }
+        }
+        if (position == elementary) {
+            Log.d("Messege:", "good job");
+            value = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_elementary_value)));
+            transete = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.word_elementary_traslete)));
+            SpacecraftWords sw = new SpacecraftWords();
+            if (spacecraftWords.size() == 0) {
+                for (int i = 0; i < value.size(); i++) {
+                    String word_val = value.get(i);
+                    // textView.setText(word_val);
+                    String transl = transete.get(i);
+                    sw.setWord(word_val);
+                    // sw.setTranscription("3");
+                    sw.setTranslate(transl);
+                    WordsRealmHelper helper1 = new WordsRealmHelper(realm);
+                    Log.d("Word", "sdfds");
+                    if (helper1.save(sw)) {
+//                    wordEditTxt.setText("");
+                        //                  trsEdit.setText("");
+                        //                translateEdit.setText("");
+                    } else {
+                        Toast.makeText(WordsActivity.this, "Invalid Data", Toast.LENGTH_SHORT).show();
+                    }
+                    //value.add(i,word);
+                    // String translate=sw.getTranslate();
+                    //Log.d("Translate",translate);
+                    //transete.add(translate);
+                }
+            }
+        }
+    /*if(position==interm){
+        Log.d("Messege:", "good job");
+        value = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.intermediate_value)));
+        transete = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.intermediate_translete)));
+        SpacecraftWords sw = new SpacecraftWords();
+        if (spacecraftWords.size() == 0) {
+            for (int i = 0; i < value.size(); i++) {
+                String word_val = value.get(i);
+                // textView.setText(word_val);
+                String transl = transete.get(i);
+                sw.setWord(word_val);
+                // sw.setTranscription("3");
+                sw.setTranslate(transl);
+                WordsRealmHelper helper1 = new WordsRealmHelper(realm);
+                Log.d("Word", "sdfds");
+                if (helper1.save(sw)) {
+//                    wordEditTxt.setText("");
+                    //                  trsEdit.setText("");
+                    //                translateEdit.setText("");
+                } else {
+                    Toast.makeText(WordsActivity.this, "Invalid Data", Toast.LENGTH_SHORT).show();
+                }
+                //value.add(i,word);
+                // String translate=sw.getTranslate();
+                //Log.d("Translate",translate);
+                //transete.add(translate);
+            }
+        }
+    }*/
+
 
         realmChangeListener=new RealmChangeListener() {
             @Override
@@ -163,7 +278,7 @@ public class WordsActivity extends AppCompatActivity {
 
 
                     WordsRealmHelper helper = new WordsRealmHelper(realm);
-                    if (helper.save(swo)) {
+                     if (helper.save(swo)) {
                         wordEditTxt.setText("");
                         trsEdit.setText("");
                         translateEdit.setText("");

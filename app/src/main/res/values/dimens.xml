@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_grafic">30dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="advise_size">24sp</dimen>
+</resources>

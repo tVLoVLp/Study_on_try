@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainInfoActivity"></activity>
+        <activity android:name=".LanguageActivity"></activity>
+        <activity android:name=".MainInfoActivity" />
         <activity android:name=".MainSettingsActivity" />
         <activity android:name=".HistoryAct" />
         <activity android:name=".TranslateTestActivity" />

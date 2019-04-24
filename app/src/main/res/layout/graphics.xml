@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/topic_statistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/topic_statistic"
+        android:textSize="@dimen/advise_size"
+        android:textColor="@android:color/black"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/default_margin"/>
+
+
+    <lecho.lib.hellocharts.view.LineChartView
+        android:id="@+id/chart"
+        android:layout_below="@+id/topic_statistic"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/default_margin"
+        android:layout_height="200dp" />
+
+    <lecho.lib.hellocharts.view.PieChartView
+        android:id="@+id/pieChartView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chart"/>
+
+
+    <TextView
+        android:id="@+id/advise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pieChartView"
+        android:layout_margin="@dimen/default_margin"
+        android:textStyle="bold"
+        android:textSize="@dimen/advise_size"
+        android:textColor="@android:color/black"
+        android:layout_centerInParent="true"
+        android:text="@string/advise"/>
+
+    <TextView
+        android:id="@+id/advise_1"
+        android:layout_below="@+id/advise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/advise_size"
+        android:text="@string/TODO"/>
+
+
+</RelativeLayout>
